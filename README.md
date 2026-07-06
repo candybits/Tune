@@ -1,14 +1,5 @@
 # tune.sh
 
-`tune.sh` is a Debian/Ubuntu server hardening and network tuning helper. It runs no action by default; choose one or more actions explicitly.
-
-This version adds a language option for English and Simplified Chinese output:
-
-```bash
-sudo ./tune.sh --lang zh-CN --help
-sudo TUNE_LANG=zh-CN ./tune.sh --help
-```
-
 ## Requirements
 
 - Debian or Ubuntu.
@@ -20,25 +11,9 @@ sudo TUNE_LANG=zh-CN ./tune.sh --help
 ## Quick start
 
 ```bash
-chmod +x tune.sh
-sudo ./tune.sh --help
-sudo ./tune.sh --dry-run --verbose -t
-sudo ./tune.sh -t -s
-```
-
-Use Simplified Chinese output:
-
-```bash
-sudo ./tune.sh --lang zh-CN --dry-run --verbose -t
-sudo ./tune.sh --zh-cn -s
-sudo TUNE_LANG=zh-CN ./tune.sh -t -s
-```
-
-Switch back to English explicitly:
-
-```bash
-sudo ./tune.sh --lang en -t
-sudo ./tune.sh --en --help
+bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Tune/main/tune.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Tune/main/tune.sh) --help
+bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Tune/main/tune.sh) --dry-run --verbose -t
 ```
 
 ## Actions
@@ -65,7 +40,6 @@ sudo ./tune.sh -ts
 | `-y`, `--yes` | Assume yes for yes/no confirmations where the script considers it safe. |
 | `--dry-run` | Preview changes; commands are logged but not executed. |
 | `-v`, `--verbose` | Show step-level progress, commands, and generated file content. |
-| `--lang <en|zh-CN>` | Display script messages in English or Simplified Chinese. |
 | `--zh-cn` | Shortcut for `--lang zh-CN`. |
 | `--en` | Shortcut for `--lang en`. |
 | `-h`, `--help` | Show help. |
@@ -82,7 +56,7 @@ The SSH action is intentionally staged:
 Recommended command:
 
 ```bash
-sudo ./tune.sh --ssh-security
+bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Tune/main/tune.sh) --ssh-security
 ```
 
 After it completes, verify from another terminal:
